@@ -12,6 +12,6 @@ router.post("/verify", resetPasswordVerify);
 router.post("/newpass", resetPassword);
 
 module.exports = {
-  path: "/",
+  path: "/api",
   router,
 };
