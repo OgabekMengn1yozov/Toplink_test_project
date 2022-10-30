@@ -7,6 +7,8 @@ module.exports = async (req, res) => {
     let { password, repeatedPassword } = req.body;
     let { reset_password } = req.headers;
 
+    if(!reset_password) throw new Error("token is not defined")
+
     if (password != repeatedPassword)
       throw new Error("no two passwords are the same");
 
