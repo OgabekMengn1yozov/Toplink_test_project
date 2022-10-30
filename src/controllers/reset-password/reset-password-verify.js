@@ -11,7 +11,7 @@ module.exports = async (req, res) => {
 
     if (user.dataValues.code != code) throw new Error("password error");
 
-    const resetPasswordToken = generateToken({
+    const resetPasswordToken = await generateToken({
       phone: phone_number,
     });
 
