@@ -11,7 +11,7 @@ module.exports = async (req, res) => {
 
     let user = await users.findOne({ where: { phone_number } });
 
-    if (!user) throw new Error("email is not registered");
+    if (!user) throw new Error("phone number is not registered");
 
     const code = generateCode();
 

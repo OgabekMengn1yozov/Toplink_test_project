@@ -24,7 +24,7 @@ module.exports = class Users {
         username,
       });
 
-      let token = generateToken({
+      let token = await generateToken({
         ...user.dataValues,
         password: undefined,
       });
@@ -32,9 +32,7 @@ module.exports = class Users {
       res.status(201).json({
         ok: true,
         message: "user created",
-        data: {
-          token,
-        },
+        token,
       });
     } catch (e) {
       console.log(e);
@@ -63,13 +61,11 @@ module.exports = class Users {
         password: undefined,
         code: undefined,
       });
-
+      
       res.status(200).json({
         ok: true,
         message: "login succes",
-        data: {
-          token,
-        },
+        token,
       });
     } catch (e) {
       console.log(e);

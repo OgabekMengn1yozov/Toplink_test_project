@@ -4,7 +4,6 @@ module.exports = async (req, res) => {
   try {
     const { users } = req.db;
     const { phone_number, code } = req.body;
-    console.log(phone_number, code);
 
     let user = await users.findOne({ where: { phone_number } });
 
